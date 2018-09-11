@@ -39,6 +39,7 @@ import "../../css/Draft.css";
 
 export default class WysiwygEditor extends Component {
   static propTypes = {
+    hideTargetSetting: PropTypes.boolean,
     onChange: PropTypes.func,
     onEditorStateChange: PropTypes.func,
     onContentStateChange: PropTypes.func,
@@ -455,6 +456,7 @@ export default class WysiwygEditor extends Component {
   };
 
   render() {
+
     const { editorState, editorFocused, toolbar } = this.state;
     const {
       locale,
@@ -476,6 +478,7 @@ export default class WysiwygEditor extends Component {
       modalHandler: this.modalHandler,
       editorState,
       onChange: this.onChange,
+      hideTargetSetting: this.props.hideTargetSetting,
       translations: {
         ...localeTranslations[locale || newLocale],
         ...translations

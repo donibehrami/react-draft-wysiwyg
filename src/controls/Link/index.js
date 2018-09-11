@@ -160,7 +160,7 @@ class Link extends Component {
   };
 
   render(): Object {
-    const { config, translations } = this.props;
+    const { config, translations, hideTargetSetting } = this.props;
     const { expanded } = this.state;
     const { link, selectionText } = this.getCurrentValues();
     const LinkComponent = config.component || LayoutComponent;
@@ -169,6 +169,7 @@ class Link extends Component {
         config={config}
         translations={translations}
         expanded={expanded}
+        hideTargetSetting={hideTargetSetting}
         onExpandEvent={this.onExpandEvent}
         doExpand={this.doExpand}
         doCollapse={this.doCollapse}
