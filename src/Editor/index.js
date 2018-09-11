@@ -39,7 +39,6 @@ import "../../css/Draft.css";
 
 export default class WysiwygEditor extends Component {
   static propTypes = {
-    hideTargetSetting: PropTypes.boolean,
     onChange: PropTypes.func,
     onEditorStateChange: PropTypes.func,
     onContentStateChange: PropTypes.func,
