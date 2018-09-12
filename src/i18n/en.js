@@ -70,7 +70,7 @@ module.exports = {
   'components.controls.list.outdent': 'Outdent',
 
   // Remove
-  'components.controls.remove.remove': 'Remove',
+  'components.controls.remove.remove': 'Remove Format',
 
   // TextAlign
   'components.controls.textalign.textalign': 'Text Align',
