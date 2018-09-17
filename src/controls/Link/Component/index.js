@@ -123,7 +123,7 @@ class LayoutComponent extends Component {
           name="linkTarget"
           value={linkTarget}
         />
-        {!this.props.hideTargetSetting === true && (<label className="rdw-link-modal-target-option" htmlFor="openLinkInNewWindow">
+        {!this.props.hideTargetSetting && (<label className="rdw-link-modal-target-option" htmlFor="openLinkInNewWindow">
           <input
             id="openLinkInNewWindow"
             type="checkbox"
