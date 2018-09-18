@@ -123,6 +123,16 @@ class LayoutComponent extends Component {
           name="linkTarget"
           value={linkTarget}
         />
+        {!this.props.hideTargetSetting && (<label className="rdw-link-modal-target-option" htmlFor="openLinkInNewWindow">
+          <input
+            id="openLinkInNewWindow"
+            type="checkbox"
+            defaultChecked={linkTargetOption === '_blank'}
+            value="_blank"
+            onChange={this.updateTargetOption}
+          />
+          <span>{translations['components.controls.link.linkTargetOption']}</span>
+        </label>)}
         <span className="rdw-link-modal-buttonsection">
           <button
             className="rdw-link-modal-btn"
