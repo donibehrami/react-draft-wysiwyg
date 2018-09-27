@@ -5,6 +5,15 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './styles.css';
 
+const fontValues = [
+  'Arial',
+  'Georgia',
+  'Impact',
+  'Tahoma',
+  'Times New Roman',
+  'Verdana',
+];
+
 export default class DropDownOption extends Component {
   static propTypes = {
     children: PropTypes.any,
@@ -58,6 +67,9 @@ export default class DropDownOption extends Component {
       highlightedClassName,
       title,
     } = this.props;
+
+    const style = fontValues.includes(children) ? {fontFamily: children} : {};
+
     return (
       <li
         className={classNames(
@@ -72,6 +84,7 @@ export default class DropDownOption extends Component {
         onMouseLeave={this.resetHighlighted}
         onClick={this.onClick}
         title={title}
+        style={style}
       >
         {children}
       </li>
