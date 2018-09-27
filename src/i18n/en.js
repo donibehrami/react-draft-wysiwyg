@@ -17,7 +17,7 @@ module.exports = {
   'components.controls.blocktype.normal': 'Normal',
 
   // Color Picker
-  'components.controls.colorpicker.colorpicker': 'Color Picker',
+  'components.controls.colorpicker.colorpicker': 'Text Color',
   'components.controls.colorpicker.text': 'Text',
   'components.controls.colorpicker.background': 'Highlight',
 
@@ -64,8 +64,8 @@ module.exports = {
 
   // List
   'components.controls.list.list': 'List',
-  'components.controls.list.unordered': 'Unordered',
-  'components.controls.list.ordered': 'Ordered',
+  'components.controls.list.unordered': 'Insert/Remove Bulleted list',
+  'components.controls.list.ordered': 'Insert/Remove Numbered list',
   'components.controls.list.indent': 'Indent',
   'components.controls.list.outdent': 'Outdent',
 
