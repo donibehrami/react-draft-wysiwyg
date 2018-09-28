@@ -14,7 +14,7 @@ const RemoveComponent = ({ config, onChange, translations }) => {
       <Option
         className={classNames(className)}
         onClick={onChange}
-        title={title || translations['components.controls.remove.remove']}
+        title="Remove Format"
       >
         <img
           src={icon}

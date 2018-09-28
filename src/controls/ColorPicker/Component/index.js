@@ -116,7 +116,7 @@ class LayoutComponent extends Component {
         aria-haspopup="true"
         aria-expanded={expanded}
         aria-label="rdw-color-picker"
-        title={title || translations['components.controls.colorpicker.colorpicker']}
+        title="Text Color"
       >
         <Option
           onClick={onExpandEvent}

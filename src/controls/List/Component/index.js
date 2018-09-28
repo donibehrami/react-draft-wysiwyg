@@ -58,7 +58,7 @@ export default class LayoutComponent extends Component {
           onClick={this.toggleBlockType}
           className={classNames(unordered.className)}
           active={listType === 'unordered'}
-          title={unordered.title || translations['components.controls.list.unordered']}
+          title="Insert/Remove Bulleted list"
         >
           <img
             src={unordered.icon}
@@ -70,7 +70,7 @@ export default class LayoutComponent extends Component {
           onClick={this.toggleBlockType}
           className={classNames(ordered.className)}
           active={listType === 'ordered'}
-          title={ordered.title || translations['components.controls.list.ordered']}
+          title="Insert/Remove Numbered list"
         >
           <img
             src={ordered.icon}
