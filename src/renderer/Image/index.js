@@ -5,6 +5,10 @@ import classNames from 'classnames';
 import Option from '../../components/Option';
 import './styles.css';
 
+import imageAlignCenter from '../../../images/ImageAlignCenter.png';
+import imageAlignLeft from '../../../images/ImageAlignLeft.png';
+import imageAlignRight from '../../../images/ImageAlignRight.png';
+
 const getImageComponent = config => class Image extends Component {
   static propTypes: Object = {
     block: PropTypes.object,
@@ -61,19 +65,19 @@ const getImageComponent = config => class Image extends Component {
           onClick={this.setEntityAlignmentLeft}
           className="rdw-image-alignment-option"
         >
-          L
+          <img src={imageAlignLeft}/>
         </Option>
         <Option
           onClick={this.setEntityAlignmentCenter}
           className="rdw-image-alignment-option"
         >
-          C
+          <img src={imageAlignCenter}/>
         </Option>
         <Option
           onClick={this.setEntityAlignmentRight}
           className="rdw-image-alignment-option"
         >
-          R
+          <img src={imageAlignRight}/>
         </Option>
       </div>
     );
