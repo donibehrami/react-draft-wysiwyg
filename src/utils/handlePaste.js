@@ -15,7 +15,14 @@ export const handlePastedText = (text, html, editorState, onChange) => {
     onChange(EditorState.push(editorState, contentState, "insert-characters"));
     return true;
   } else if (html) {
-    const contentBlock = htmlToDraft(html);
+    const content = document.createElement('div');
+    content.innerHTML = html;
+    const elements = Array.from(content.getElementsByTagName('*'));
+    elements && elements.map((element) => {
+      element.style.fontSize = element.style.fontSize.replace('pt', 'px');
+    });
+    const returnHtml = content && content.innerHTML ? content.innerHTML : html;
+    const contentBlock = htmlToDraft(returnHtml);
     let contentState = editorState.getCurrentContent();
     contentBlock.entityMap.forEach((value, key) => {
       contentState = contentState.mergeEntityData(key, value);
