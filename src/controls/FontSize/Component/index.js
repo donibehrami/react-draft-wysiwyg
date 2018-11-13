@@ -32,6 +32,9 @@ export default class LayoutComponent extends Component {
       this.setState({ // eslint-disable-line react/no-did-mount-set-state
         defaultFontSize,
       });
+      setTimeout(() => {
+        this.props.onChange(parseInt(defaultFontSize, 10));
+      }, 10);
     }
   }
 
