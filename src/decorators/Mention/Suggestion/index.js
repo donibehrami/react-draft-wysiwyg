@@ -89,11 +89,20 @@ function getSuggestionComponent() {
       children: PropTypes.array,
     };
 
+    
+    constructor(props) {
+      super(props);
+
+      this.suggestion = React.createRef();
+      this.dropdown = React.createRef();
+    }
+
     state: Object = {
       style: { left: 15 },
       activeOption: -1,
       showSuggestions: true,
     };
+
 
     componentDidMount() {
       const editorRect = config.getWrapperRef().getBoundingClientRect();
@@ -172,14 +181,6 @@ function getSuggestionComponent() {
       });
     }
 
-    setSuggestionReference: Function = (ref: Object): void => {
-      this.suggestion = ref;
-    };
-
-    setDropdownReference: Function = (ref: Object): void => {
-      this.dropdown = ref;
-    };
-
     closeSuggestionDropdown: Function = (): void => {
       this.setState({
         showSuggestions: false,
@@ -221,7 +222,7 @@ function getSuggestionComponent() {
       return (
         <span
           className="rdw-suggestion-wrapper"
-          ref={this.setSuggestionReference}
+          ref={this.suggestion}
           onClick={config.modalHandler.onSuggestionClick}
           aria-haspopup="true"
           aria-label="rdw-suggestion-popup"
@@ -233,7 +234,7 @@ function getSuggestionComponent() {
               contentEditable="false"
               suppressContentEditableWarning
               style={this.state.style}
-              ref={this.setDropdownReference}
+              ref={this.dropdown}
             >
               {this.filteredSuggestions.map((suggestion, index) =>
                 (<span

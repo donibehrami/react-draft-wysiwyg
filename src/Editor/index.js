@@ -101,6 +101,8 @@ export default class WysiwygEditor extends Component {
       editorFocused: false,
       toolbar
     };
+    this.wrapper = React.createRef();
+    this.editor = this.props.editorRef ? this.props.editorRef : React.createRef();
     const wrapperId = props.wrapperId
       ? props.wrapperId
       : Math.floor(Math.random() * 10000);
@@ -249,17 +251,6 @@ export default class WysiwygEditor extends Component {
         this.afterChange(editorState);
       }
     }
-  };
-
-  setWrapperReference: Function = (ref: Object): void => {
-    this.wrapper = ref;
-  };
-
-  setEditorReference: Function = (ref: Object): void => {
-    if (this.props.editorRef) {
-      this.props.editorRef(ref);
-    }
-    this.editor = ref;
   };
 
   getCompositeDecorator = (): void => {
@@ -521,7 +512,7 @@ export default class WysiwygEditor extends Component {
           </div>
         )}
         <div
-          ref={this.setWrapperReference}
+          ref={this.wrapper}
           className={classNames(editorClassName, "rdw-editor-main")}
           style={editorStyle}
           onClick={this.focusEditor}
@@ -531,7 +522,7 @@ export default class WysiwygEditor extends Component {
           onMouseDown={this.onEditorMouseDown}
         >
           <Editor
-            ref={this.setEditorReference}
+            ref={this.editor}
             onTab={this.onTab}
             onUpArrow={this.onUpDownArrow}
             onDownArrow={this.onUpDownArrow}
