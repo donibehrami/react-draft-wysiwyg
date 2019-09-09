@@ -10,7 +10,7 @@ module.exports = {
     './src/index',
   ],
   output: {
-    path: path.join(__dirname, '../dist'),
+    path: path.join(__dirname, '../lib'),
     filename: 'react-draft-wysiwyg.js',
     library: 'reactDraftWysiwyg',
     libraryTarget: 'umd',
